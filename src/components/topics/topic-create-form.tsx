@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useFormState } from "react-dom";
+import * as actions from '@/actions';
+import FormButton from '@/components/common/form-button';
 import {
-  Input,
   Button,
-  Textarea,
+  Input,
   Popover,
-  PopoverTrigger,
   PopoverContent,
-} from "@nextui-org/react";
-import * as actions from "@/actions";
-import FormButton from "../common/form-button";
+  PopoverTrigger,
+  Textarea,
+} from '@nextui-org/react';
+import { useFormState } from 'react-dom';
 
 export default function TopicCreateForm() {
   const [formState, action] = useFormState(actions.createTopic, {
@@ -32,7 +32,7 @@ export default function TopicCreateForm() {
               labelPlacement="outside"
               placeholder="Name"
               isInvalid={!!formState.errors.name}
-              errorMessage={formState.errors.name?.join(", ")}
+              errorMessage={formState.errors.name?.join(', ')}
             />
 
             <Textarea
@@ -41,12 +41,12 @@ export default function TopicCreateForm() {
               labelPlacement="outside"
               placeholder="Describe your topic"
               isInvalid={!!formState.errors.description}
-              errorMessage={formState.errors.description?.join(", ")}
+              errorMessage={formState.errors.description?.join(', ')}
             />
 
             {formState.errors._form ? (
               <div className="rounded p-2 bg-red-200 border border-red-400">
-                {formState.errors._form?.join(", ")}
+                {formState.errors._form?.join(', ')}
               </div>
             ) : null}
 

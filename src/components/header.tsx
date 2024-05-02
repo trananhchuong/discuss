@@ -1,12 +1,12 @@
-import Link from "next/link";
+import HeaderAuth from '@/components/header-auth';
 import {
+  Input,
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Input,
-} from "@nextui-org/react";
-import HeaderAuth from "@/components/header-auth";
+} from '@nextui-org/react';
+import Link from 'next/link';
 
 export default function Header() {
   return (
